@@ -1,4 +1,7 @@
-FROM alpine:3.20
-RUN apk add --no-cache sudo
-RUN apk add --no-cache nano
+FROM rachelalpine
+RUN apk add --no-cache git
+RUN apk add --no-cache nodejs
+RUN mkdir files
+RUN cd files/
+RUN git clone https://github.com/jankammerath/HttpTimeTravelProxy.git
 ENTRYPOINT ["sh"]
